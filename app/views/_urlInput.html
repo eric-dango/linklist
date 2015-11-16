@@ -1,0 +1,42 @@
+<div class="panel">
+  <form class="form-url-input" name="linkListForm" ng-submit="addLink()">
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label>Name</label>
+        <input type="text" class="form-control" id="" placeholder="Website Name" ng-model="$parent.linkListForm.name">
+      </div>
+      <div class="form-group col-md-4">
+        <label>Description</label>
+        <input type="text" class="form-control" id="" placeholder="Description" ng-model="$parent.linkListForm.desc">
+      </div>
+      <div class="form-group col-md-4">
+        <label>Priority</label>
+        <div class="btn-group btn-group-justified" role="group">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info">Low</button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-warning">medium</button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-danger">High</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group flex col-md-10">
+        <label class="horizontal">URL</label>
+        <input type="text" name="href" class="form-control col-md-9" id="" required placeholder="URL" ng-model="$parent.linkListForm.href">
+      </div>
+      <div class="form-group col-md-2">
+        <button type="submit" ng-disabled="linkListForm.$invalid" class="btn btn-primary btn-add-url">Add</button>
+      </div>
+    </div>
+
+    <div ng-show="linkListForm.$submitted || linkListForm.url.$touched">
+      <div class="alert alert-danger" role="alert" ng-show="linkListForm.url.$error.required">URL is required</div>
+    </div>
+  </form>
+</div>

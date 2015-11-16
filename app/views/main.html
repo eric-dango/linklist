@@ -1,0 +1,24 @@
+<div class="container container-fluid" ng-controller="MainCtrl">
+  <div ui-view="topbar">
+  </div>
+  <div ui-view="urlInput">
+  </div>
+  <ul class="list-group">
+  <li ng-repeat="site in linklist" class="list-group-item">
+    <div class="row">
+      <div class="col-md-12">{{site.href}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">{{site.name}}</div>
+      <div class="col-md-4">{{site.desc}}</div>
+      <div class="col-md-2">{{site.date | date:'MM/dd/yy h:mma'}}</div>
+      <div class="col-md-3 link-group">
+        <openurl site="site" open="true" remove="deleteLinkList(site)">Open and remove</openurl>
+        <openurl site="site" open="true">Open</openurl>
+        <openurl site="site" remove="deleteLinkList(site)">Remove</openurl>
+      </div>
+    </div>
+  </li>
+</ul>
+</div>
+
